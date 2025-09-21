@@ -1,17 +1,18 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "lop_hoc")
 public class LopHoc {
-    private String maLopHoc;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long maLopHoc;
+
     private String tenLopHoc;
     private int siSo;
 
-    public LopHoc(String maLopHoc, String tenLopHoc, int siSo) {
-        this.maLopHoc = maLopHoc;
-        this.tenLopHoc = tenLopHoc;
-        this.siSo = siSo;
-    }
-
-    public String getMaLopHoc() {
+    public Long getMaLopHoc() {
         return maLopHoc;
     }
     public String getTenLopHoc() {
@@ -19,9 +20,6 @@ public class LopHoc {
     }
     public int getSiSo() {
         return siSo;
-    }
-    public void setMaLopHoc(String maLopHoc) {
-        this.maLopHoc = maLopHoc;
     }
     public void setTenLopHoc(String tenLopHoc) {
         this.tenLopHoc = tenLopHoc;
